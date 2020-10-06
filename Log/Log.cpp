@@ -1,7 +1,9 @@
-#include "pch.h"
+﻿#include "pch.h"
+
 #include "Log.h"
 #include "CommonUtil.h"
 
+#include <cstdarg>
 #include <fstream>
 
 using namespace std;

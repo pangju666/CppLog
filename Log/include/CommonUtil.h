@@ -1,6 +1,6 @@
-#pragma once
-
+﻿#pragma once
 #include "pch.h"
+
 #include <string>
 
 /**
@@ -19,7 +19,7 @@ namespace algorithm {
 	 * @return 转换后的ascii编码字符串
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::string utf8StrToAsciiStr(const char* utf8Str);
+	std::string utf8StrToAsciiStr(const char* utf8Str);
 		
 	/**
 	 *	@brief UTF-8编码字符串转换成unicode编码字符串
@@ -28,7 +28,7 @@ namespace algorithm {
 	 * @return 转换后的unicode编码字符串
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::wstring utf8StrToUnicodeStr(const char* utf8Str);
+	std::wstring utf8StrToUnicodeStr(const char* utf8Str);
 	
 	/**
 	 * @brief 获取当前系统日期，并以字符串形式返回
@@ -36,7 +36,7 @@ namespace algorithm {
 	 * @return 当前时间的字符串表示
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::string getNowDateStr();
+	std::string getNowDateStr();
 
 	/**
 	 * @brief 获取当前系统时间，并以字符串形式返回
@@ -44,7 +44,7 @@ namespace algorithm {
 	 * @return 当前时间的字符串表示
 	 * @since 1.0 
 	 */
-	__declspec(dllexport) std::string getNowTimeStr();
+	std::string getNowTimeStr();
 
 	/**
 	 * @brief 解析日期整数和时间整数表示为字符串
@@ -54,7 +54,7 @@ namespace algorithm {
 	 * @return 解析后的时间字符串
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::string parseDateTimeToString(const int& date, const int& time);
+	std::string parseDateTimeToString(const int& date, const int& time);
 	
 	/**
 	 * @brief 解析日期整数表示为字符串
@@ -63,7 +63,7 @@ namespace algorithm {
 	 * @return 解析后的时间字符串
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::string parseDateToString(const int& date);
+	std::string parseDateToString(const int& date);
 
 	/**
 	 * @brief 解析时间整数表示为字符串
@@ -72,7 +72,7 @@ namespace algorithm {
 	 * @return 解析后的时间字符串
 	 * @since 1.0
 	 */
-	__declspec(dllexport) std::string parseTimeToString(const int& time);
+	std::string parseTimeToString(const int& time);
 
 	/**
 	 * @brief 时间整数减法运算
@@ -82,7 +82,7 @@ namespace algorithm {
 	 * @return 计算得到的新时间整数表示
 	 * @since 1.0
 	 */
-	__declspec(dllexport) int subTime(int time, int seconds);
+	int subTime(int time, int seconds);
 
 	/**
 	 * @brief 获取相对文件路径
@@ -91,7 +91,7 @@ namespace algorithm {
 	 * @return 相对文件路径
 	 * @since 1.1
 	 */
-	__declspec(dllexport) std::string getRelativePath(const std::string& absolutePath);
+	std::string getRelativePath(const std::string& absolutePath);
 	
 	/**
 	 * @brief 百分比转化
@@ -100,7 +100,7 @@ namespace algorithm {
 	 * @return 百分比的小数表示
 	 * @since 1.1
 	 */
-	__declspec(dllexport) double percentageConvert(const double& percentage);
+	double percentageConvert(const double& percentage);
 
-	//__declspec(dllexport) std::string formatStr(const char* format, ...);
+	//std::string formatStr(const char* format, ...);
 }
