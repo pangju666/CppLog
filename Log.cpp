@@ -1,6 +1,4 @@
-﻿#include "pch.h"
-
-#include "Log.h"
+﻿#include "Log.h"
 #include "CommonUtil.h"
 
 #include <cstdarg>
