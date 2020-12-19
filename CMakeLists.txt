@@ -20,7 +20,7 @@ target_include_directories(cpp_common_util_lib
 file(GLOB headers *.h)
 file(GLOB sources *.cpp)
 add_library(CppLog ${headers} ${sources})
-target_link_libraries(CppLog PRIVATE CppCommonUtil)
+target_link_libraries(CppLog PRIVATE cpp_common_util_lib)
 
 install(TARGETS CppLog
         DESTINATION lib)
