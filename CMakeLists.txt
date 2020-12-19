@@ -5,27 +5,16 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_DEBUG_POSTFIX d)
 
-# check and introduce OES library
-set(CPP_COMMON_UTIL_DIR "CPP_COMMON_UTIL-NOTFOUND"
-        CACHE PATH "CppCommonUtil root directory"
-        )
-set(CPP_COMMON_UTIL_DIR $CACHE{CPP_COMMON_UTIL_DIR})
-if ($<CONFIG:Debug>)
-    set(CPP_COMMON_UTIL_LIBRARY $CACHE{CPP_COMMON_UTIL_DIR}/lib/libConfigd.a)
-else ()
-    set(CPP_COMMON_UTIL_LIBRARY $CACHE{CPP_COMMON_UTIL_DIR}/lib/libConfig.a)
-endif ()
+# check and introduce CppCommonUtil library
+set(CPP_COMMON_UTIL_INCLUDE_DIR "CPP_COMMON_UTIL_INCLUDE_DIR-NOTFOUND" CACHE PATH "cpp_common_util include directory")
+set(CPP_COMMON_UTIL_LIBRARY "CPP_COMMON_UTIL_LIBRARY-NOTFOUND" CACHE FILEPATH "cpp_common_util library")
 
-if (NOT IS_DIRECTORY ${CPP_COMMON_UTIL_DIR})
-    message(FATAL_ERROR "MUST SET CPP_COMMON_UTIL DIRECTORY")
-endif ()
-
-add_library(CppCommonUtil STATIC IMPORTED)
-set_target_properties(CppCommonUtil PROPERTIES
-        IMPORTED_LOCATION ${CPP_COMMON_UTIL_LIBRARY}
+add_library(cpp_common_util_lib STATIC IMPORTED)
+set_target_properties(cpp_common_util_lib
+        PROPERTIES IMPORTED_LOCATION $CACHE{CPP_COMMON_UTIL_LIBRARY}
         )
-target_include_directories(CppCommonUtil
-        INTERFACE "${CPP_COMMON_UTIL_DIR}/include"
+target_include_directories(cpp_common_util_lib
+        INTERFACE $CACHE{CPP_COMMON_UTIL_INCLUDE_DIR}
         )
 
 file(GLOB headers *.h)
