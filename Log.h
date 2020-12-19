@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CPPLOG_LOG_H
+#define CPPLOG_LOG_H
 
 #include <string>
 
@@ -28,3 +29,5 @@ class Log  final
 	private:
 		static std::string logFileName;
 };
+
+#endif
